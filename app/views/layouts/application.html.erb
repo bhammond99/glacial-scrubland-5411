@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PersonalSite</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div id="sidebar">
+		<div id="logo">
+			<%= link_to root_path do %>
+				<%= image_tag "sphinxfacemini.jpg", size: "70x70", alt: "WildGenius" %>
+				<% end %>
+		</div>
+		<ul>
+			<li class="category">Home</li>
+			<li><%= link_to "Blog", root_path %></li>
+			<li>About</li>
+		</ul>
+
+		<ul>
+			<li class="category">Social</li>
+			<li><a href="https://instagram.com/yhnic_atl">Instagram</a></li>
+			<li><a href="https://github.com/bhammond99">Github</a></li>
+			<li><a href="mailto:malahki@gmail.com">Email</a></li>
+			<li></li>
+		</ul>	
+		<% if !user_signed_in? %>
+		<p class="sign_in"><%= link_to "Admin Login", new_user_session_path %></p>	
+		<% end %>
+	</div>	
+
+	<div id="main_content">
+		<div id="header">
+			<p> <%= link_to "All Posts", root_path %></p>
+
+
+			<% if user_signed_in? %>
+			<div class="buttons">
+				<button class="button"><%= link_to "New Post", new_post_path %></button>
+					<button class="button"><%=link_to "Log Out", destroy_user_session_path, :method => :delete %></button> 
+			</div>
+			<% end %>
+		</div>
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert") %>
+		<% end %>			
+	
+	<%= yield %>
+	</div>	
+</body>
+</html>
