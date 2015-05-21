@@ -17,7 +17,9 @@ class PostsController < ApplicationController
 			redirect_to @post
 		else 
 			render 'new'
-		end		
+		end	
+
+		
 	end
 	
 	def show
@@ -31,7 +33,7 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 
-		if @post.update(params[:post].permit(:title, :body))
+		if @post.update(params[:post].permit(:title, :body ))
 			redirect_to @post
 		else
 			render 'edit'

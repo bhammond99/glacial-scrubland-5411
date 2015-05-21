@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   end  
 
   root 'posts#index'
-   get 'posts/new' => 'posts#new'
    get 'static/index' => 'static#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
