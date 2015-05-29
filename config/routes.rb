@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'posts#index'
    get 'static/index' => 'static#index'
 
-  # The priority is based upon order of creation: first created -> highest priority.
+  # The priority isß based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
