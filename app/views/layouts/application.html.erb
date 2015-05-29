@@ -18,7 +18,7 @@
 		<ul>
 			<li class="category">Home</li>
 			<li><%= link_to "Blog", root_path %></li>
-			<li>About</li>
+			<li><%= link_to "About", static_index_path %></li>
 		</ul>
 
 		<ul>
@@ -26,7 +26,15 @@
 			<li><a href="https://instagram.com/yhnic_atl">Instagram</a></li>
 			<li><a href="https://github.com/bhammond99">Github</a></li>
 			<li><a href="mailto:malahki@gmail.com">Email</a></li>
-			<li></li>
+			<br>
+			<li><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+			">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+			</li>
 		</ul>	
 		<% if !user_signed_in? %>
 		<p class="sign_in"><%= link_to "Admin Login", new_user_session_path %></p>	
