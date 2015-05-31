@@ -11,7 +11,7 @@
 
 	<div id="sidebar">
 		<div id="logo">
-			<%= link_to root_path do %>
+			<%= link_to static_index_path do %>
 				<%= image_tag "sphinxfacemini.jpg", size: "70x70", alt: "WildGenius" %>
 				<% end %>
 		</div>
@@ -19,7 +19,7 @@
 			<li class="category">Home</li>
 			<li><%= link_to "Blog", root_path %></li>
 			<li><%= link_to "About", static_index_path %></li>
-			<li><%= link_to "Subscribe", root_path %></li>
+			<li><%= link_to "Subscribe", new_subscriber_path %></li>
 		</ul>
 
 		<ul>

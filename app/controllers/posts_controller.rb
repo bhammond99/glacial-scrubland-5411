@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
+	impressionist actions: [:show], unique: [:session_hash]
 	
 	def index
 		@posts = Post.all.order('created_at DESC')
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
 	
 	def show
 		@post = Post.find(params[:id])
+		impressionist(@post)
 	end	
 
 	def edit
