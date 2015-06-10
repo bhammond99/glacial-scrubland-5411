@@ -5,4 +5,10 @@ class Post < ActiveRecord::Base
 	validates :title, presence: true, length: { minimum: 5 }
 	validates :body, presence: true
 	is_impressionable 
+
+	after_save :send_posts
+
+	def send_posts
+		logger.info "*****************Going to send posts: #{title}"
+	end	
 end

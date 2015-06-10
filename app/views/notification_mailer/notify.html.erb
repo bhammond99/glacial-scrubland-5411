@@ -3,3 +3,22 @@
 <p>
   <%= @greeting %>, find me in app/views/notification_mailer/notify.html.erb
 </p>
+
+
+<h1> New Post! </h1>
+
+<h3><%= @post.title %></h3>
+
+<p>
+<%= image_tag "http://localhost:3000/#{@post.image}" %>
+</p>
+
+<p>
+	Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+</p>
+
+<%= link_to @post.title, post_url(@post) %>
+
+
+
+

@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   root 'posts#index'
    get 'static/index' => 'static#index'
-
+   get 'sendpost/:id(.:format)' => 'posts#send_post', :as => 'send_post'
+   get 'sendwelcome/:id(.:format)' => 'subscribers#send_welcome', :as => 'send_welcome'
   # The priority isß based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
