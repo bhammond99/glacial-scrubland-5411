@@ -6,11 +6,11 @@ class NotificationMailer < ActionMailer::Base
   #
   #   en.notification_mailer.welcome.subject
   #
-  def welcome(subscriber_id)
-    @subscriber = Subscriber.find(subscriber_id)
+  def welcome(subscriber)
+    @subscriber = subscriber
     @url = 'http://localhost:3000/posts'
-    mail(:to => "#{@subscriber.name} <#{subscriber.email}>",
-          from: "wildgenius99@gmail.com",
+    mail to:  "#{@subscriber.name} <#{@subscriber.email}>",
+          from:  "wildgenius99@gmail.com",
           subject: 'Welcome to My Blog'
   end
 

@@ -29,14 +29,18 @@ class SubscribersController < ApplicationController
 
   def create
     @subscriber = Subscriber.new(subscriber_params)
+    respond_to do |format|
     if @subscriber.save
-        redirect_to posts_path, notice: "You have successfully subscribed."
-        
-    else 
-      render 'new'
-    end 
-    
+
+        NotificationMailer.welcome(@subscriber).deliver
+        format.html { redirect_to posts_path, notice: 'Subscriber was successfully created.' }
+      format.json { render :show, status: :created, location: @subscriber }
+    else
+      format.html { render :new }
+      format.json { render json: @subscriber.errors, status: :unprocessable_entity }
+    end
   end
+end
 
   def update
     @subscriber = Subscriber.find(params[:id])
