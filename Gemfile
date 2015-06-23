@@ -42,6 +42,8 @@ gem 'impressionist'
 
 gem 'figaro'
 
+gem 'aws-sdk'
+
 
 
 
