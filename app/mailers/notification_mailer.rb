@@ -8,7 +8,7 @@ class NotificationMailer < ActionMailer::Base
   #
   def welcome(subscriber)
     @subscriber = subscriber
-    @url = 'http://localhost:3000/posts'
+    @url = 'https://glacial-scrubland-5411.herokuapp.com'
     mail to:  "#{@subscriber.name} <#{@subscriber.email}>",
           from:  "wildgenius99@gmail.com",
           subject: 'Welcome to My Blog'
