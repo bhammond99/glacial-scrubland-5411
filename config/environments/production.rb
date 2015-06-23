@@ -50,6 +50,16 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
+config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  #domain:               'example.com',
+  user_name:            ENV['user_name'],
+  password:             ENV['password'],
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+config.action_mailer.raise_delivery_errors = false
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
