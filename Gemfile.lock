@@ -157,7 +157,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk
+  aws-sdk (~> 2)
   coffee-rails (~> 4.0.0)
   devise (~> 3.4.1)
   figaro

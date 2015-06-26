@@ -19,4 +19,4 @@
 /config/application.yml
 
 # Ignore amazon S3 credentials
-/config/aws.yml
+/config/S3.yml
