@@ -20,3 +20,6 @@
 
 # Ignore amazon S3 credentials
 /config/S3.yml
+
+# Ignore amazon S3 credentials
+/config/aws.yml

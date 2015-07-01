@@ -4,11 +4,8 @@ ruby '2.1.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
-group :development, :test do
-   gem 'sqlite3'
-end
 
-group :production do
+group :development, :test, :production do
    gem 'pg'
    gem 'rails_12factor'
 end      
@@ -43,6 +40,7 @@ gem 'impressionist'
 gem 'figaro'
 
 gem 'aws-sdk', '~> 2'
+
 
 
 
