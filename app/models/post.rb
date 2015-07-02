@@ -8,7 +8,9 @@ class Post < ActiveRecord::Base
 
 	after_save :send_posts
 
+
 	def send_posts
 		logger.info "*****************Going to send posts: #{title}"
 	end	
 end
+

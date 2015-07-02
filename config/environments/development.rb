@@ -52,4 +52,13 @@ Rails.application.configure do
    # needed for imagestick
    Paperclip.options[:command_path] = "/usr/local/bin/"
 
+   config.paperclip_defaults = {
+  :storage => :s3,
+  :bucket => "wildgblogstorage",
+  :s3_credentials => {
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
+
 end

@@ -39,7 +39,7 @@ gem 'impressionist'
 
 gem 'figaro'
 
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk', '< 2.0'
 
 
 
